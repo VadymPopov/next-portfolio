@@ -9,7 +9,6 @@ type Props = {
 export default async function Project({ params }: Props) {
   const slug = params.project;
   const project = await getProject(slug);
-  console.log(project);
 
   return (
     <div>
@@ -36,6 +35,8 @@ export default async function Project({ params }: Props) {
         height={1080}
         className='mt-10 border-2 border-gray-700 object-cover rounded-xl'
       />
+      <p>{project.stack}</p>
+      <p>{project.github_url}</p>
     </div>
   );
 }

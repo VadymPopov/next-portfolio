@@ -7,5 +7,7 @@ export type Project = {
   slug: string;
   image: string;
   url: string;
+  github_url: string;
+  stack: string;
   content: PortableTextBlock[];
 };

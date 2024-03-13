@@ -22,6 +22,7 @@ const project = {
       title: "GITHUB URL",
       type: "url",
     },
+    { name: "stack", title: "Stack", type: "string" },
     {
       name: "content",
       title: "Content",

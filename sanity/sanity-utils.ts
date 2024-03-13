@@ -2,6 +2,7 @@ import { Project } from "@/types/Project";
 import { createClient, groq } from "next-sanity";
 import clientConfig from "./config/client-config";
 import { Page } from "@/types/Page";
+import { Stack } from "@/types/Stack";
 
 export async function getProjects(): Promise<Project[]> {
   return createClient(clientConfig).fetch(
@@ -13,6 +14,7 @@ export async function getProjects(): Promise<Project[]> {
         "image": image.asset->url,
         url,
         github_url,
+        stack,
         content
     }`
   );
@@ -28,6 +30,7 @@ export async function getProject(slug: string): Promise<Project> {
         "image": image.asset->url,
         url,
         github_url,
+        stack,
         content
     }`,
     { slug }
@@ -55,5 +58,18 @@ export async function getPage(slug: string): Promise<Page> {
         content
     }`,
     { slug }
+  );
+}
+
+export async function getStack(): Promise<Stack[]> {
+  return createClient(clientConfig).fetch(
+    groq`*[_type == 'stack']{
+        _id,
+        _createdAt,
+        name,
+        "slug": slug.current,
+        icon,
+        url
+    }`
   );
 }

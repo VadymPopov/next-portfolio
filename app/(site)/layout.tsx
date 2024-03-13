@@ -21,7 +21,13 @@ export default async function Layout({
 
   return (
     <html lang='en'>
-      <body className='mr-20 py-10'>
+      <link
+        rel='stylesheet'
+        type='text/css'
+        href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
+      />
+
+      <body className={`mr-20 py-10 ${inter.className}`}>
         <header className='flex flex-col items-center justify-start isolate  fixed top-[48px] left-[48px] bottom-[48px] z-50 p-0  w-[48px]'>
           <Link
             href='/'
@@ -56,7 +62,7 @@ export default async function Layout({
         </header>
         <main className='ml-[150px]'>{children}</main>
         <footer className='flex items-baseline justify-center p-[28px]'>
-          <p>&copy; 2024 Vadym Popov</p>
+          <p>&copy; 2024 Vadym Popov </p>
         </footer>
       </body>
     </html>
