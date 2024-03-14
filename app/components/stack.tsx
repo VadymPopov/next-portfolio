@@ -1,7 +1,5 @@
 import { getStack } from "@/sanity/sanity-utils";
 
-export interface StackProps {}
-
 export default async function Stack() {
   const stack = await getStack();
 

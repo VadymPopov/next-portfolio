@@ -1,6 +1,9 @@
+import ContactForm from "@/app/components/contact-form";
+import Resume from "@/app/components/resume";
 import Stack from "@/app/components/stack";
-import { getPage } from "@/sanity/sanity-utils";
+import { getPage, getProjects } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
+import ProjectsList from "@/app/components/projects-list";
 
 type Props = {
   params: { slug: string };
@@ -8,6 +11,7 @@ type Props = {
 
 export default async function Page({ params }: Props) {
   const page = await getPage(params.slug);
+  const projects = await getProjects();
 
   return (
     <>
@@ -20,6 +24,9 @@ export default async function Page({ params }: Props) {
           <PortableText value={page && page.content} />
         </div>
         {params?.slug === "about" && <Stack />}
+        {params?.slug === "resume" && <Resume />}
+        {params?.slug === "contact" && <ContactForm />}
+        {params?.slug === "projects" && <ProjectsList projects={projects} />}
       </div>
     </>
   );
