@@ -32,7 +32,7 @@ export default async function Layout({
 
       <body className={`flex flex-col min-h-screen ${font.className}`}>
         <Header pages={pages} />
-        <main className='ml-[150px] mr-20 mt-10'>{children}</main>
+        <main className='ml-[150px] mr-24 mt-20'>{children}</main>
         <footer className='flex items-baseline justify-center px-[28px] py-[56px] mt-auto'>
           <p>&copy; 2024 Vadym Popov </p>
         </footer>

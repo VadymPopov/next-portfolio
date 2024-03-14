@@ -27,11 +27,14 @@ export async function getProject(slug: string): Promise<Project> {
         _createdAt,
         name,
         "slug": slug.current,
-        "image": image.asset->url,
         url,
         github_url,
         stack,
-        content
+        content,
+        "images": images[]{
+          "url": asset->url,
+          "alt": alt
+        }
     }`,
     { slug }
   );

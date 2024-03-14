@@ -12,17 +12,17 @@ export default function ProjectItem({ project }: ProjectItemProps) {
   return (
     <Link
       href={`/projects/${slug}`}
-      className='transition-all ease-in-out duration-250 border-2 border-transparent rounded-lg overflow-hidden bg-green-200 shadow-md hover:shadow-lg transform hover:scale-105 group'>
+      className='transition-all ease-in-out duration-250 border-transparent rounded-2xl overflow-hidden bg-gray-200 shadow-custom hover:shadow-customHover transform hover:scale-105 group'>
       {image && (
         <Image
           src={image}
           alt={name}
-          width={750}
-          height={350}
-          className=' rounded-lg object-cover w-full h-48'
+          width={600}
+          height={380}
+          className='object-cover w-full h-60'
         />
       )}
-      <div className='flex items-center justify-center p-3'>
+      <div className='flex items-center justify-center px-3 py-4'>
         <p className='font-extrabold text-gray-500 group-hover:bg-gradient-to-r group-hover:from-orange-400 group-hover:to-purple-500 group-hover:bg-clip-text group-hover:text-transparent'>
           <span className='font-normal transition-opacity duration-250 opacity-0 group-hover:opacity-100 text-[#00afc1]'>
             &lt;

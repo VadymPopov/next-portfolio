@@ -1,16 +1,15 @@
 "use client";
+import Button from "./button";
 
 export default function Resume() {
-  const downloadResume = () => {
-    const link = document.createElement("a");
-    link.href = "/Vadym_Popov_Frontend Developer.pdf";
-    link.download = "Vadym_Popov_Frontend Developer.pdf";
-    link.click();
-  };
-
   return (
     <div>
-      <button onClick={downloadResume}>Download Resume</button>
+      <Button
+        route='/Vadym_Popov_Frontend Developer.pdf'
+        download={true}
+        target='_blank'>
+        Download
+      </Button>
       <div style={{ marginTop: "20px" }}>
         <h2>Preview:</h2>
         <iframe

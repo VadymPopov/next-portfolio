@@ -15,19 +15,22 @@ export default async function Page({ params }: Props) {
 
   return (
     <>
-      <div>
-        <h1 className='bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-extrabold'>
+      <section>
+        <h1 className='text-end bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent text-5xl drop-shadow font-bold mb-10 p-2'>
           {page && page.title}
         </h1>
 
-        <div className='text-lg text-gray-700 mt-10'>
+        <div className='text-lg text-gray-700'>
           <PortableText value={page && page.content} />
         </div>
-        {params?.slug === "about" && <Stack />}
-        {params?.slug === "resume" && <Resume />}
-        {params?.slug === "contact" && <ContactForm />}
-        {params?.slug === "projects" && <ProjectsList projects={projects} />}
-      </div>
+
+        <div>
+          {params?.slug === "about" && <Stack />}
+          {params?.slug === "resume" && <Resume />}
+          {params?.slug === "contact" && <ContactForm />}
+          {params?.slug === "projects" && <ProjectsList projects={projects} />}
+        </div>
+      </section>
     </>
   );
 }

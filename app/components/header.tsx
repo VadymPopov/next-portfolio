@@ -4,6 +4,7 @@ import Link from "next/link";
 import { LuGithub, LuLinkedin } from "react-icons/lu";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
+import ThemeSwitcher from "./theme-switcher";
 
 interface HeaderProps {
   pages: Page[];
@@ -67,6 +68,7 @@ export default function Header({ pages }: HeaderProps) {
             />
           </Link>
         </div>
+        <ThemeSwitcher />
       </nav>
     </header>
   );
