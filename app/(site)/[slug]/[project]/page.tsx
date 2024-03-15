@@ -1,6 +1,5 @@
 import { getProject } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
-import Image from "next/image";
 import Button from "@/app/components/button";
 import { FaGitSquare } from "react-icons/fa";
 import Carousel from "@/app/components/carousel";
@@ -23,11 +22,11 @@ export default async function Project({ params }: Props) {
           Visit website
         </Button>
       </header>
-      <div className='grid grid-cols-2 gap-8 justify-start'>
-        <div className='text-lg text-justify text-gray-700'>
+      <div className='grid grid-cols-2 gap-10 justify-start'>
+        <div className='text-lg text-justify text-secondary'>
           <PortableText value={project.content} />
-          <div className='mt-5 text-end'>
-            <h2>Tools</h2>
+          <div className='my-10 text-end'>
+            <h2 className='text-primary uppercase tracking-widest'>Tools</h2>
             <p>{project.stack}</p>
           </div>
           <div className='flex'>
@@ -37,13 +36,6 @@ export default async function Project({ params }: Props) {
           </div>
         </div>
         <Carousel images={project.images} />
-        {/* <Image
-          src={project.image}
-          alt={project.name}
-          width={1920}
-          height={1080}
-          className='border-[1px] border-gray-700 object-cover rounded-xl'
-        /> */}
       </div>
     </div>
   );

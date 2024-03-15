@@ -5,19 +5,18 @@ export default async function Stack() {
 
   return (
     <div className='logos flex flex-nowrap'>
-      <ul className='logos-slide flex items-center justify-center gap-8'>
+      <ul className='logos-slide flex items-center justify-center'>
         {stack.map((item) => {
           return (
-            <li key={item._id} className='group'>
+            <li key={item._id} className='group mx-8 '>
               <a
                 href={item.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex flex-col items-center justify-center'>
+                className='flex flex-col items-center justify-center '>
                 <i
-                  className={item.icon}
-                  style={{ fontSize: "36px", color: "black" }}></i>
-                <span className='opacity-0 group-hover:opacity-100 text-gray-500'>
+                  className={`transition delay-400 group-hover:text-accent text-[48px] ${item.icon}`}></i>
+                <span className='opacity-0 group-hover:opacity-100 text-accent transition delay-400'>
                   {item.name}
                 </span>
               </a>
@@ -25,19 +24,19 @@ export default async function Stack() {
           );
         })}
       </ul>
-      <ul className='logos-slide flex items-center justify-center gap-8'>
+
+      <ul className='logos-slide flex items-center justify-center'>
         {stack.map((item) => {
           return (
-            <li key={item._id} className='group'>
+            <li key={item._id} className='group mx-8 '>
               <a
                 href={item.url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex flex-col items-center justify-center'>
+                className='flex flex-col items-center justify-center '>
                 <i
-                  className={item.icon}
-                  style={{ fontSize: "36px", color: "black" }}></i>
-                <span className='opacity-0 group-hover:opacity-100 text-gray-500'>
+                  className={`transition delay-400 group-hover:text-accent text-[48px] ${item.icon}`}></i>
+                <span className='opacity-0 group-hover:opacity-100 text-accent transition delay-400'>
                   {item.name}
                 </span>
               </a>

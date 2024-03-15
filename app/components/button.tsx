@@ -16,9 +16,9 @@ const Button = ({ route, children, git, download, ...rest }: ButtonProps) => {
       download
       className={clsx(
         git &&
-          "flex flex-row items-center justify-between border-black border-2 hover:text-zinc-50 hover:border-transparent ",
-        !git && "py-2.5 px-5 bg-gray-900 text-zinc-50",
-        "py-2.5 px-5 text-base text-center font-medium rounded hover:bg-gray-800"
+          "flex flex-row items-center justify-between hover:text-zinc-50 hover:border-transparent text-secondary transition duration-400",
+        !git && "bg-gray-950 text-zinc-50",
+        "glass py-2.5 px-5 text-base text-center font-medium rounded hover:bg-gray-500 transition"
       )}
       {...rest}>
       {children}

@@ -7,20 +7,34 @@ interface ImagesProps {
 
 export default function Carousel({ images }: ImagesProps) {
   return (
-    <div className='w-64 carousel rounded-box cursor-move'>
-      {images.map((image) => {
-        return (
-          <div className='carousel-item w-full' key={image.alt}>
+    <div>
+      <div className='carousel rounded-box w-full h-[300px] '>
+        {images.map((image, idx) => {
+          return (
             <Image
+              id={`item${idx}`}
               src={image.url}
+              key={image.alt}
               alt={image.alt}
               width={1920}
               height={1080}
-              className='w-full border-[1px] border-gray-700 object-cover rounded-xl'
+              className='carousel-item w-full object-cover'
             />
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
+      <div className='flex justify-center w-full py-2 gap-2'>
+        {images.map((image, idx) => {
+          return (
+            <a
+              href={`#item${idx}`}
+              key={`#item${idx}`}
+              className='btn btn-xs glass bg-gray-950 text-zinc-50'>
+              {idx + 1}
+            </a>
+          );
+        })}
+      </div>
     </div>
   );
 }
