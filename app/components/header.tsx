@@ -5,7 +5,6 @@ import { LuGithub, LuLinkedin } from "react-icons/lu";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import ThemeSwitcher from "./theme-switcher";
-
 interface HeaderProps {
   pages: Page[];
 }

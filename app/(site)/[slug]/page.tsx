@@ -1,6 +1,5 @@
 import ContactForm from "@/app/components/contact-form";
 import Resume from "@/app/components/resume";
-import Stack from "@/app/components/stack";
 import { getPage, getProjects } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import ProjectsList from "@/app/components/projects-list";

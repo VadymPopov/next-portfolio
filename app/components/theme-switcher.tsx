@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
 
 const themes = {
@@ -9,7 +9,7 @@ const themes = {
 
 const getThemeFromLocalStorage = () => {
   if (typeof window !== "undefined") {
-    const theme = localStorage.getItem("theme") || themes.night;
+    const theme = localStorage.getItem("theme") || themes.day;
     document.documentElement.setAttribute("data-theme", theme);
     return theme;
   }
@@ -26,9 +26,17 @@ const ThemeSwitcher = () => {
     localStorage.setItem("theme", newTheme);
   };
 
+  useEffect(() => {
+    getThemeFromLocalStorage();
+  }, []);
+
   return (
     <label className='swap swap-rotate mr-2 fixed top-[48px] right-[48px]'>
-      <input type='checkbox' onChange={toggleTheme} />
+      <input
+        type='checkbox'
+        onChange={toggleTheme}
+        checked={theme === themes.day}
+      />
       <BsSunFill className='swap-on h-8 w-8 fill-neutral' />
       <BsFillMoonStarsFill className='swap-off h-8 w-8 fill-neutral' />
     </label>
