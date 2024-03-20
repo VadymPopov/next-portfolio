@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Work_Sans } from "next/font/google";
 import "../globals.css";
 import Header from "@/app/components/header";
+import NextTopLoader from "nextjs-toploader";
 
 const font = Work_Sans({
   subsets: ["latin"],
@@ -31,6 +32,17 @@ export default async function Layout({
       </head>
 
       <body className={`flex flex-col min-h-screen ${font.className}`}>
+        <NextTopLoader
+          color='#3b82f6'
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing='easeIn'
+          speed={200}
+          shadow='0 0 10px #3b82f6, 0 0 5px #3b82f6'
+        />
         <Header pages={pages} />
         <main className='ml-[150px] mr-24 mt-20'>{children}</main>
         <footer className='flex items-baseline justify-center px-[28px] py-[56px] mt-auto'>

@@ -3,17 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/types/Project";
 import { motion } from "framer-motion";
+import { elementVarients } from "@/animations/animations";
 
 interface ProjectItemProps {
   project: Project;
 }
-
-const elementVarients = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-  },
-};
 
 export default function ProjectItem({ project }: ProjectItemProps) {
   const { slug, image, name } = project;
