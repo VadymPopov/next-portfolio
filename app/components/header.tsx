@@ -9,21 +9,17 @@ interface HeaderProps {
   pages: Page[];
 }
 
+import Logo from "@/app/components/logo";
+
 export default function Header({ pages }: HeaderProps) {
   const pathname = usePathname();
 
   return (
     <header className='flex flex-col items-center justify-start isolate  fixed top-[48px] left-[48px] bottom-[48px] z-50 p-0  w-[48px]'>
       <Link href='/' className='p-8 relative group'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          height='32'
-          width='24'
-          className='fill-secondary origin-center group-hover:rotate-[360deg] group-hover:fill-accent transition-all  [transition:transform_400ms_300ms,fill_500ms]'
-          viewBox='0 0 384 512'>
-          <path d='M19.7 34.5c16.3-6.8 35 .9 41.8 17.2L192 364.8 322.5 51.7c6.8-16.3 25.5-24 41.8-17.2s24 25.5 17.2 41.8l-160 384c-5 11.9-16.6 19.7-29.5 19.7s-24.6-7.8-29.5-19.7L2.5 76.3c-6.8-16.3 .9-35 17.2-41.8z' />
-        </svg>
+        <Logo />
       </Link>
+
       <nav className='flex flex-col items-center justify-between text-sm text-primary'>
         <div
           className='rotate-180 flex flex-row-reverse relative mb-10'

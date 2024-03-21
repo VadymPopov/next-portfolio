@@ -1,16 +1,15 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
-import { mainAnimation } from "@/animations/animations";
+import { projectAnimation } from "@/animations/animations";
 
 export default function Template({ children }: { children: React.ReactNode }) {
   return (
     <AnimatePresence mode={"wait"}>
       <motion.div
+        variants={projectAnimation}
         initial='hidden'
         animate='visible'
-        exit='exit'
-        variants={mainAnimation}
-        className='min-h-screen w-full'>
+        exit='exit'>
         {children}
       </motion.div>
     </AnimatePresence>
