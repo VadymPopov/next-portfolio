@@ -30,7 +30,7 @@ export default function Header({ pages }: HeaderProps) {
               href={`/${page.slug}`}
               className={clsx(
                 pathname === `/${page.slug}` && "text-accent ",
-                "text-base p-4 relative font-semibold transition ease-in-out hover:text-accent group py-2"
+                "text-base p-4 relative font-semibold transition ease-in-out hover:text-accent group py-2 uppercase"
               )}>
               {page.title}
               <span
