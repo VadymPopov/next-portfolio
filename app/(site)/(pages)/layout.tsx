@@ -8,12 +8,12 @@ export default async function Layout({
   phrase: string;
 }>) {
   return (
-    <section>
-      <h1 className='text-end bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent text-4xl drop-shadow font-semibold mb-10 p-2 uppercase'>
+    <div>
+      <h1 className='text-end bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent text-3xl md:text-4xl drop-shadow font-semibold mb-10 md:p-2 pt-10 uppercase'>
         {title}
       </h1>
-      <p className='text-lg text-secondary text-justify mb-5 '>{phrase}</p>
+      <p className='text-lg text-secondary text-justify mb-5'>{phrase}</p>
       <div>{children}</div>
-    </section>
+    </div>
   );
 }

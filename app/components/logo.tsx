@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { fillVariants, pathVariants } from "@/animations/animations";
+import { fillVariants, pathVariants } from "@/animations";
 
 export default function Logo() {
   return (

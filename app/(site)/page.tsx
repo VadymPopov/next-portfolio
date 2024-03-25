@@ -1,29 +1,24 @@
 "use client";
 import { motion } from "framer-motion";
-import {
-  slideUp,
-  slideToLeft,
-  slideToRight,
-  fadeIn,
-} from "@/animations/animations";
+import { slideUp, slideToLeft, slideToRight, fadeIn } from "@/animations";
 import Spinner from "@/app/components/spinner";
 import Button from "@/app/components/button";
 
 export default function Home() {
   return (
     <>
-      <div className='grid grid-cols-3 gap-2 items-end z-10'>
+      <div className='md:grid md:grid-cols-3 md:gap-2 md:items-end z-10'>
         <Spinner />
-        <div className='pt-36 pl-28  col-span-2'>
+        <div className='md:pt-36 sm:pl-16 pt-44 col-span-2 mb-10 md:mb-0'>
           <motion.span
             initial='hidden'
             animate='visible'
             variants={fadeIn}
             custom={0.6}
-            className='uppercase tracking-[0.3rem] font-semibold mb-2 text-primary'>
+            className='uppercase tracking-[0.3rem] font-semibold indent-2 mb-2 text-primary'>
             Vadym Popov
           </motion.span>
-          <h1 className='text-8xl font-semibold flex flex-wrap  text-secondary'>
+          <h1 className='lg:text-8xl md:text-7xl text-6xl font-semibold flex flex-wrap  text-secondary'>
             <motion.span
               initial='hidden'
               animate='visible'
@@ -53,7 +48,8 @@ export default function Home() {
           initial='hidden'
           animate='visible'
           variants={slideUp}
-          custom={0.5}>
+          custom={0.5}
+          className='flex justify-end md:block'>
           <Button route='/projects'>View Projects</Button>
         </motion.div>
       </div>

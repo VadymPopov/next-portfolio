@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Project } from "@/types/Project";
 import { motion } from "framer-motion";
-import { card, elementVarients } from "@/animations/animations";
+import { card, elementVarients } from "@/animations";
 
 interface ProjectItemProps {
   project: Project;

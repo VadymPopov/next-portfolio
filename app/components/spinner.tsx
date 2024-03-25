@@ -1,6 +1,6 @@
 "use client";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Spinner() {
   const text = "VADYM | FRONTEND DEVELOPER";
@@ -47,7 +47,7 @@ export default function Spinner() {
   }, [animate, characters, scope]);
 
   return (
-    <div className='absolute top-64 right-60 overflow-hidden z-0'>
+    <div className='hidden sm:block absolute 2xl:top-64 2xl:right-60 xl:top-64 xl:right-36 lg:top-12 lg:right-6 md:top-44 md:right-4 sm:top-20 top-20 overflow-hidden z-0'>
       <motion.div
         ref={scope}
         className='relative aspect-square'

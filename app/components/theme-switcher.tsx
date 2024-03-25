@@ -2,13 +2,14 @@
 import React from "react";
 import { useTheme } from "next-themes";
 import { BsFillMoonStarsFill, BsSunFill } from "react-icons/bs";
+import clsx from "clsx";
 
 const themes = {
   day: "day",
   night: "night",
 };
 
-const ThemeSwitcher = () => {
+const ThemeSwitcher = ({ position }: { position: string }) => {
   const { setTheme, resolvedTheme } = useTheme();
 
   const toggleTheme = () => {
@@ -18,9 +19,9 @@ const ThemeSwitcher = () => {
   };
 
   return (
-    <label className='swap swap-rotate mr-2 fixed top-[48px] right-[48px]'>
+    <label className={clsx(position === 'top' ? 'top-12' : 'bottom-12','swap swap-rotate mr-2 right-12 fixed')}>
       <input type='checkbox' onChange={toggleTheme} />
-      <BsSunFill className='swap-on h-8 w-8 fill-neutral' />
+      <BsSunFill className={`${position} swap-on h-8 w-8 fill-neutral`} />
       <BsFillMoonStarsFill className='swap-off h-8 w-8 fill-neutral' />
     </label>
   );
