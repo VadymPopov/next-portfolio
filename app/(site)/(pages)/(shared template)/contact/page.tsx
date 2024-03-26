@@ -1,10 +1,15 @@
-import Layout from "../../layout";
 import { SiGmail } from "react-icons/si";
 import { FaMobileButton, FaLocationDot } from "react-icons/fa6";
 
 export default async function Page() {
   return (
-    <Layout title='contact' phrase='I am open to collaboration!'>
+    <>
+      <h1 className='text-end bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent text-3xl md:text-4xl drop-shadow font-semibold mb-10 md:p-2 pt-10 uppercase'>
+        contact
+      </h1>
+      <p className='text-lg text-secondary text-justify mb-5'>
+        I am open to collaboration!
+      </p>
       <section className='py-12'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='lg:grid grid-cols-1 md:grid-cols-3 gap-10'>
@@ -36,6 +41,6 @@ export default async function Page() {
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 }

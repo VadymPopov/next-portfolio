@@ -1,11 +1,13 @@
-import Layout from "../../layout";
 import Stack from "@/app/components/stack";
 import Image from "next/image";
 import Button from "@/app/components/button";
 
 export default async function Page() {
   return (
-    <Layout title='about' phrase=''>
+    <>
+      <h1 className='text-end bg-gradient-to-r from-orange-400 via-red-500 to-purple-500 bg-clip-text text-transparent text-3xl md:text-4xl drop-shadow font-semibold mb-10 md:p-2 pt-10 uppercase'>
+        about
+      </h1>
       <div>
         <div className='grid md:gap-10 md:grid-cols-2 xl:grid-cols-3 lg:gap-20 mb-10'>
           <div className='text-justify text-lg text-secondary mb-5 col-span-1 xl:col-span-2'>
@@ -38,6 +40,6 @@ export default async function Page() {
         </div>
         <Stack />
       </div>
-    </Layout>
+    </>
   );
 }
