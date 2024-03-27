@@ -5,7 +5,7 @@ import { LuGithub, LuLinkedin } from "react-icons/lu";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import ThemeSwitcher from "./theme-switcher";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 interface HeaderProps {
   pages: Page[];
 }
@@ -13,21 +13,7 @@ interface HeaderProps {
 import Logo from "@/app/components/logo";
 
 export default function Header({ pages }: HeaderProps) {
-  const [windowSize, setWindowSize] = useState<number | undefined>(undefined);
   const checkboxRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-    setWindowSize(window.innerWidth);
-
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   const handleMenuItemClick = () => {
     if (checkboxRef.current) {
       checkboxRef.current.checked = false;
@@ -37,24 +23,14 @@ export default function Header({ pages }: HeaderProps) {
   const pathname = usePathname();
 
   return (
-    <header
-      className={clsx(
-        windowSize &&
-          windowSize >= 640 &&
-          "flex flex-col items-center justify-start isolate fixed top-12 left-12 bottom-12 z-50 p-0  w-12"
-      )}>
+    <header className='sm:flex sm:flex-col sm:items-center sm:justify-start sm:isolate sm:fixed sm:top-12 sm:left-12 sm:bottom-12 sm:z-50 sm:p-0  sm:w-12'>
       <Link
         href='/'
-        className={clsx(
-          windowSize && windowSize <= 640
-            ? "fixed top-6 left-6 z-50"
-            : "p-8 relative",
-          "group"
-        )}
+        className='fixed top-6 left-6 z-50 sm:top-0 sm:left-0 sm:p-8 sm:relative group'
         onClick={handleMenuItemClick}>
         <Logo />
       </Link>
-      <div className={clsx(windowSize && windowSize <= 640 && "hidden")}>
+      <div className='hidden sm:block'>
         <nav className='flex flex-col items-center justify-between text-sm text-primary'>
           <div
             className='rotate-180 flex flex-row-reverse relative mb-10'
@@ -103,11 +79,7 @@ export default function Header({ pages }: HeaderProps) {
       </div>
 
       <label
-        className={clsx(
-          windowSize && windowSize >= 640
-            ? "hidden"
-            : "fixed top-6 right-6 z-40 cursor-pointer px-3 py-6 "
-        )}
+        className='sm:hidden fixed top-6 right-6 z-40 cursor-pointer px-3 py-6'
         htmlFor='mobile-menu'>
         <input
           className='peer hidden'

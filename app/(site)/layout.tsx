@@ -30,6 +30,7 @@ export default async function Layout({
           type='text/css'
           href='https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css'
         />
+        <link rel='icon' href='/app/favicon.ico' sizes='any' />
       </head>
 
       <body className={`flex flex-col min-h-screen ${font.className}`}>
