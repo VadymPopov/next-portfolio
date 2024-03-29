@@ -2,12 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes slide {
-  from {
-    transform: translateX(0);
+:root {
+  --first-glow: conic-gradient(
+    from 10deg at 50% 50%,
+    #e910f5 0deg,
+    #c209cf 55deg,
+    #0069e9 120deg,
+    #0c1fede6 160deg,
+    transparent 360deg
+  );
+
+  --second-glow: conic-gradient(
+    from 90deg at 50% 50%,
+    #fb923c 0deg,
+    #fd5219 160deg,
+    #ef4444 120deg,
+    #f05f05f5 55deg,
+    transparent 360deg
+  );
+}
+
+.home::before,
+.home::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  opacity: 0.7;
+}
+
+.home::before {
+  background: var(--second-glow);
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  filter: blur(90px);
+  top: calc(50vh / 2);
+  left: calc(50vw - 50vw / 2);
+  animation: animateBefore 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+.home::after {
+  background: var(--first-glow);
+  border-radius: 50%;
+  width: 20vw;
+  height: 20vw;
+  filter: blur(90px);
+  top: calc(50vh / 2);
+  left: calc(50vw - 50vw / 2);
+  animation: animateAfter 10s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+@keyframes animateBefore {
+  0% {
+    transform: translateX(0) scale(1.2);
   }
-  to {
-    transform: translateX(-100%);
+  50% {
+    transform: translateX(-250px) scale(0.6);
+  }
+  100% {
+    transform: translateX(0) scale(1.2);
+  }
+}
+
+@keyframes animateAfter {
+  0% {
+    transform: translateX(0) scale(1.2);
+  }
+  50% {
+    transform: translateX(250px) scale(0.6);
+  }
+  100% {
+    transform: translateX(0) scale(1.2);
   }
 }
 
@@ -22,4 +87,13 @@
 
 .logos-slide {
   animation: 28s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
 }

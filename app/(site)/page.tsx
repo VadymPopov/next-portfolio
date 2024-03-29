@@ -6,7 +6,7 @@ import Button from "@/app/components/button";
 
 export default function Home() {
   return (
-    <div className='md:grid md:grid-cols-3 md:gap-2 md:items-end z-10'>
+    <div className='home md:grid md:grid-cols-3 md:gap-2 md:items-end z-10'>
       <Spinner />
       <div className='md:pt-36 sm:pl-16 pt-44 col-span-2 mb-10 md:mb-0'>
         <motion.span
