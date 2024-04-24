@@ -1,7 +1,9 @@
+const currentDate = new Date().toISOString().split("T")[0];
+
 const config = {
   projectId: "4rxjte4v",
   dataset: "production",
-  apiVersion: "2024-03-11",
+  apiVersion: currentDate,
   useCdn: true,
 };
 
