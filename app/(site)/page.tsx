@@ -17,7 +17,7 @@ export default function Home() {
           className='uppercase tracking-[0.3rem] font-semibold indent-2 mb-2 text-primary'>
           Vadym Popov
         </motion.span>
-        <h1 className='lg:text-8xl md:text-7xl text-6xl font-semibold flex flex-wrap  text-secondary'>
+        <h1 className='lg:text-8xl md:text-7xl text-6xl font-semibold flex flex-col flex-wrap  text-secondary'>
           <motion.span
             initial='hidden'
             animate='visible'

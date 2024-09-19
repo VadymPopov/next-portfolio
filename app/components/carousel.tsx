@@ -7,8 +7,8 @@ interface ImagesProps {
 
 export default function Carousel({ images }: ImagesProps) {
   return (
-    <div className=''>
-      <div className='carousel rounded-box w-full h-[450px]'>
+    <div>
+      <div className='carousel rounded-box  h-[600px] w-full'>
         {images.map((image, idx) => {
           return (
             <Image
@@ -18,7 +18,7 @@ export default function Carousel({ images }: ImagesProps) {
               alt={image.alt}
               width={1920}
               height={1080}
-              className='carousel-item w-full object-cover'
+              className='carousel-item w-full h-auto object-cover'
             />
           );
         })}
