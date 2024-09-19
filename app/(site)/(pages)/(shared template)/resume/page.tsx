@@ -12,19 +12,19 @@ export default async function Page() {
       <section>
         <div className='mb-10 align-end'>
           <Button
-            route='/Vadym_Popov_Frontend Developer.pdf'
+            route='/Vadym Popov - Frontend Developer.pdf'
             download={true}
             target='_blank'>
             Download
           </Button>
         </div>
-        <div>
+        <div className='w-full h-screen'>
           <p className='text-primary text-2xl'>Preview:</p>
           <iframe
             title='Resume Preview'
-            src='/Vadym_Popov_Frontend Developer.pdf'
-            width='100%'
-            height='600px'></iframe>
+            src='/Vadym Popov - Frontend Developer.pdf'
+            className='w-full max-h-full h-[600px] md:h-screen'
+          />
         </div>
       </section>
     </>
