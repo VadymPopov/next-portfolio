@@ -51,7 +51,7 @@ export default async function Layout({
             {children}
           </main>
           <footer className='flex items-baseline justify-center lg:px-7 lg:py-14 mt-auto px-5 py-10 '>
-            <p>&copy; 2024 Vadym Popov </p>
+            <p>&copy; {new Date().getFullYear()} Vadym Popov </p>
           </footer>
         </Providers>
       </body>
