@@ -50,7 +50,7 @@ export default async function Page() {
           </div>
 
           <Image
-            src={"/photo_vadym.jpg"}
+            src={"/Vadym.jpg"}
             alt='vadym_photo'
             width={326}
             height={398}
