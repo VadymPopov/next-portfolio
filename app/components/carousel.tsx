@@ -8,8 +8,8 @@ interface ImagesProps {
 export default function Carousel({ images }: ImagesProps) {
   return (
     <div>
-      <div className='carousel rounded-box  h-[600px] w-full'>
-        {images.map((image, idx) => {
+      <div className='carousel rounded-box h-[600px] w-full'>
+        {images?.map((image, idx) => {
           return (
             <Image
               id={`item${idx}`}
@@ -24,7 +24,7 @@ export default function Carousel({ images }: ImagesProps) {
         })}
       </div>
       <div className='flex justify-center w-full py-2 gap-2'>
-        {images.map((image, idx) => {
+        {images?.map((_, idx) => {
           return (
             <a
               href={`#item${idx}`}
