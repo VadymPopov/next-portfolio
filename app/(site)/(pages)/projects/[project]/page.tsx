@@ -27,8 +27,8 @@ export default async function Project({ params }: Props) {
 
   return (
     <div className='mt-20 sm:mt-0'>
-      <header className='flex justify-between items-center'>
-        <h1 className='text-4xl drop-shadow font-semibold bg-gradient-to-r from-orange-400 to-purple-500 bg-clip-text text-transparent mb-5 p-2 uppercase'>
+      <header className='flex flex-col md:flex-row justify-between md:items-center gap-2.5 mb-2.5 md:gap-5 md:mb-5'>
+        <h1 className='text-4xl drop-shadow font-semibold bg-gradient-to-r from-orange-400 to-purple-500 bg-clip-text text-transparent p-2 uppercase'>
           {project.name || "Untitled Project"}
         </h1>
         {project.url ? (

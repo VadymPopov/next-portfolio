@@ -8,6 +8,7 @@ export type Image = {
 export type Project = {
   _id: string;
   _createdAt: Date;
+  _updatedAt: Date;
   name: string;
   slug: string;
   image: string;

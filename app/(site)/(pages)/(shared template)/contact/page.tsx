@@ -1,5 +1,6 @@
 import { SiGmail } from "react-icons/si";
 import { FaMobileButton, FaLocationDot } from "react-icons/fa6";
+import Image from "next/image";
 
 export default async function Page() {
   return (
@@ -39,6 +40,18 @@ export default async function Page() {
               <span className='text-primary'>Toronto, Canada</span>
             </div>
           </div>
+        </div>
+        <div className='text-center mt-10'>
+          <p className='mb-2 text-primary font-semibold'>
+            Want to share or open this on mobile? Scan the QR code
+          </p>
+          <Image
+            src='/qr-code.png'
+            alt='Scan to visit my portfolio'
+            width={300}
+            height={300}
+            className='mx-auto mt-5'
+          />
         </div>
       </section>
     </>
