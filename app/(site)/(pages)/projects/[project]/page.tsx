@@ -1,12 +1,21 @@
-import { getProject } from "@/sanity/sanity-utils";
+import { getProject, getProjects } from "@/sanity/sanity-utils";
 import { PortableText } from "next-sanity";
 import Button from "@/app/components/button";
 import { FaGitSquare } from "react-icons/fa";
 import Carousel from "@/app/components/carousel";
 
+export async function generateStaticParams() {
+  const projects = await getProjects();
+  return projects.map((project) => ({
+    project: project.slug,
+  }));
+}
+
 type Props = {
   params: { project: string };
 };
+
+export const revalidate = 86400;
 
 export default async function Project({ params }: Props) {
   const slug = params.project;

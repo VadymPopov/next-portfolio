@@ -1,21 +1,22 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
-export async function GET(request: Request) {
-  const secret = request.headers.get("x-webhook-secret");
+export async function POST(req: Request) {
+  const body = await req.json();
+
+  const secret = req.headers.get("x-webhook-secret");
   if (secret !== process.env.SANITY_WEBHOOK_SECRET) {
     return NextResponse.json({ message: "Invalid secret" }, { status: 401 });
   }
 
-  try {
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/projects`, {
-      next: { revalidate: 0 },
-    });
+  const slug = body.slug;
 
-    return NextResponse.json({ revalidated: true });
-  } catch (err) {
-    return NextResponse.json(
-      { message: "Error revalidating" },
-      { status: 500 }
-    );
+  if (!slug) {
+    return NextResponse.json({ message: "Missing slug" }, { status: 400 });
   }
+
+  revalidatePath("/projects");
+  revalidatePath(`/projects/${slug}`);
+
+  return NextResponse.json({ revalidated: true });
 }

@@ -4,7 +4,7 @@ const config = {
   projectId: "4rxjte4v",
   dataset: "production",
   apiVersion: currentDate,
-  useCdn: true,
+  useCdn: false,
 };
 
 export default config;
