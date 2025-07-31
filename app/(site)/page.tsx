@@ -23,7 +23,7 @@ export default function Home() {
             animate='visible'
             variants={slideToLeft}
             custom={0.3}>
-            Frontend
+            Fullstack
           </motion.span>
           <motion.span
             initial='hidden'

@@ -1,9 +1,9 @@
 "use client";
 import { motion, useAnimate } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function Spinner() {
-  const text = "VADYM | FRONTEND DEVELOPER";
+  const text = "VADYM | FULLSTACK DEVELOPER";
   const characters = text.split("");
 
   const radius = 200;

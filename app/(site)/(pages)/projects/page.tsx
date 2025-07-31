@@ -1,6 +1,8 @@
 import { getProjects } from "@/sanity/sanity-utils";
 import ProjectsList from "@/app/components/projects-list";
 
+export const revalidate = 86400;
+
 export default async function Page() {
   const projects = await getProjects();
   return (
