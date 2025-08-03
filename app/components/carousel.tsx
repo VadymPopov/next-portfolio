@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { Image as ImageType } from "@/types/Project";
 
@@ -5,36 +6,39 @@ interface ImagesProps {
   images: ImageType[];
 }
 
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "@/app/swiper.css";
+
+import { Pagination } from "swiper/modules";
+
 export default function Carousel({ images }: ImagesProps) {
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index: number, className: string) {
+      return '<span class="' + className + '">' + (index + 1) + "</span>";
+    },
+  };
+
   return (
-    <div>
-      <div className='carousel rounded-box h-[300px] md:h-[450px] lg:h-[600px] w-full'>
+    <>
+      <Swiper pagination={pagination} modules={[Pagination]}>
         {images?.map((image, idx) => {
           return (
-            <Image
-              id={`item${idx}`}
-              src={image.url}
-              key={image.alt}
-              alt={image.alt}
-              width={1920}
-              height={1080}
-              className='carousel-item w-full h-auto object-cover'
-            />
+            <SwiperSlide key={image.alt}>
+              <Image
+                id={`item${idx}`}
+                src={image.url}
+                alt={image.alt}
+                width={1920}
+                height={1080}
+              />
+            </SwiperSlide>
           );
         })}
-      </div>
-      <div className='flex justify-center w-full py-2 gap-2'>
-        {images?.map((_, idx) => {
-          return (
-            <a
-              href={`#item${idx}`}
-              key={`#item${idx}`}
-              className='btn btn-xs glass bg-gray-950 text-zinc-50'>
-              {idx + 1}
-            </a>
-          );
-        })}
-      </div>
-    </div>
+      </Swiper>
+    </>
   );
 }
